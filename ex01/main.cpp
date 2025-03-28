@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <unistd.h>
 
 int	main()
 {
@@ -19,8 +20,25 @@ int	main()
 	//e explicar as regras
 	//depois, abro o prompt para uma das opcoes: ADD, SEARCH, EXIT
 	
-	PhoneBook	bowserbook;
+	PhoneBook		pb;
+	std::string		cmd; 
 
-	bowserbook.startPhonebook();
+	pb.startPhonebook();
+	while (!std::cin.eof())
+	{
+		std::cout << "\033[0;32m";
+		usleep(1000000);
+		std::cout << "--> 📞 Text your command: \n";
+		std::getline(std::cin, cmd);
+		if (cmd == "EXIT")
+			break ;
+		else if (cmd == "ADD")
+			std::cout << "LET'S ADD A CONTACT!" << std::endl;
+		else if (cmd == "SEARCH")
+			std::cout << "LET'S SEARCH FOR A CONTACT!" << std::endl;
+		else
+			std::cout << "Wrong command! Try again.. it's not that hard"<< std::endl;
+
+	}
 	return (0);
 }
