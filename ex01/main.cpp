@@ -15,11 +15,6 @@
 
 int	main()
 {
-	//eu tenho que ter dois objetos (uma instancia de phone e contacts)
-	//primeiro, ao iniciar o programa eu tenho que dizer um welcome
-	//e explicar as regras
-	//depois, abro o prompt para uma das opcoes: ADD, SEARCH, EXIT
-	
 	PhoneBook		pb;
 	std::string		cmd; 
 
@@ -33,9 +28,9 @@ int	main()
 		if (cmd == "EXIT")
 			break ;
 		else if (cmd == "ADD")
-			std::cout << "LET'S ADD A CONTACT!" << std::endl;
+			pb.addContact();
 		else if (cmd == "SEARCH")
-			std::cout << "LET'S SEARCH FOR A CONTACT!" << std::endl;
+			pb.searchContact();
 		else
 			std::cout << "Wrong command! Try again.. it's not that hard"<< std::endl;
 

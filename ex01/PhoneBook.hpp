@@ -34,8 +34,8 @@ class PhoneBook {
 		PhoneBook(); //costructor
 		~PhoneBook(); //destructor
 		void	addContact();
-		void	startPhonebook();
 		void	searchContact() const;
+		void	startPhonebook();
 };
 
 #endif
