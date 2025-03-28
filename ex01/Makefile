@@ -27,9 +27,10 @@ BUILD_PATH		= .build
 TEMP_PATH		= .temp
 
 ### Files Source
-FILES = PhoneBook.cpp
+FILES = main.cpp
+FILES += PhoneBook.cpp
 
-### Paths
+## Paths
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
 
 OBJS	= $(SRC:$(SRC_PATH)/%.c=%$(BUILD_PATH)/%.o)
@@ -60,7 +61,7 @@ $(NAME): $(BUILD_PATH) $(OBJS)
 	@echo "$(YEL)Compiling $(MAG)$(NAME)$(YEL) mandatory version$(D)"
 	$(CPP) $(CPPFLAGS) $(CFLAGS) $(OBJS) $(INC) -o $(NAME)
 	@echo "[$(_SUCCESS) compiling $(MAG)$(NAME)$(D) $(YEL);D$(D)]"
-	@make --no-print-directory norm
+	@make --no-print-directory
 
 -include $(BUILD_PATH)/%.d
 
@@ -77,21 +78,6 @@ $(TEMP_PATH):
 	@echo "* $(YEL)Creating $(CYA)$(TEMP_PATH)$(YEL) folder:$(D) $(_SUCCESS)"
 
 ##@ Test Rules 🧪
-
-test: all			## Run tests
-	@echo "[$(YEL)Running $(GRN)$(NAME)$(YEL) tests$(D)]"
-	@echo "$(YEL)$(_SEP)$(D)"
-	@echo "$(CYA)$(NAME)$(D): $(MAG)with no arguments$(D)"
-	./$(NAME)
-	@echo "$(YEL)$(_SEP)$(D)"
-	@echo "$(CYA)$(NAME)$(D): $(MAG)with 1 argument$(D)"
-	./$(NAME) "shhhhh... I think the students are asleep..."
-	@echo "$(YEL)$(_SEP)$(D)"
-	@echo "$(CYA)$(NAME)$(D): $(MAG)with several argument$(D)"
-	./$(NAME) Damnit " ! " "Sorry students, I thought this thing was off."
-	@echo "$(YEL)$(_SEP)$(D)"
-	@echo "$(CYA)$(NAME)$(D): $(MAG)with lots of whitespace$(D) $(RED)(Extra)$(D)"
-	./$(NAME) Dude "    !    " "    I am loud and I shall be loud till the end of timez   !!!    "
 
 ##@ Debug Rules 
 

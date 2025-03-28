@@ -4,6 +4,7 @@
 #define PHONEBOOK_HPP
 
 #include <string>
+#include <iostream>
 
 class Contact {
 
@@ -25,13 +26,15 @@ class Contact {
 class PhoneBook {
 
 	private:
-		Contact	contacts[8];
+		Contact	contacts[8]; //an array of contacts
 		int		contactCount;
 		int		nextIndex;
 
 	public:
-		PhoneBook();
+		PhoneBook(); //costructor
+		~PhoneBook(); //destructor
 		void	addContact();
+		void	startPhonebook();
 		void	searchContact() const;
 };
 
