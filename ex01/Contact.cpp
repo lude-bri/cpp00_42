@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <iomanip> 
+#include <iostream> 
 
 //Constructor
 Contact::Contact(){};
@@ -29,3 +31,21 @@ void	Contact::setContact(std::string firstName, std::string lastName,
 	this->phoneNumber = phoneNumber;
 	this->darkestSecret = darkestSecret;
 }
+
+//truncate to have "." when name +10
+std::string	truncate(std::string str)
+{
+	if (str.length() > 10)
+		return str.substr(0, 9) + ".";
+	return str;
+}
+
+//dislays
+void	Contact::displayPreview(int index) const
+{
+	std::cout << std::setw(10) << index << "|";
+	std::cout << std::setw(10) << truncate(firstName) << "|";
+	std::cout << std::setw(10) << truncate(lastName) << "|";
+	std::cout << std::setw(10) << truncate(nickName) << "|";
+}
+

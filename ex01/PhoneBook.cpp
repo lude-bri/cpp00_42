@@ -42,7 +42,6 @@ void printLoadingBar() {
 	std::cout << "DONE!!! \n";
 	usleep(1000000);
 	std::cout << "\033[0m"; // reset de cor
-	//
 }
 
 void PhoneBook::startPhonebook() {
@@ -173,7 +172,7 @@ void	PhoneBook::addContact(void)
 	{
 		Contact &c = this->contacts[this->contactCount++ % 9];
 		c.setContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
-		std::cout << std::endl << "Contacts Added Successfully\n";
+		std::cout << std::endl << "Contacts Added Successfully!!!\n";
 	}
 }
 
