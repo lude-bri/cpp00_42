@@ -15,7 +15,11 @@
 #include <unistd.h>  // usleep
 
 //Constructor
-PhoneBook::PhoneBook(){}
+PhoneBook::PhoneBook()
+{
+	this->contactCount = 0;
+	this->nextIndex = 1;
+}
 
 //Destructor
 PhoneBook::~PhoneBook(){}
@@ -165,9 +169,12 @@ void	PhoneBook::addContact(void)
 	if (firstName.size() < 1 || lastName.size() < 1 || nickName.size() < 1
 		|| phoneNumber.size() < 1 || darkestSecret.size() < 1)
 		std::cout << "A contact cannot have empty fields" << std::endl;
-	// this->contacts[this->contactCount++ % 8] =
-	// 	Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
-	// std::cout << std::endl << "Contacts Added Successfully\n";
+	else
+	{
+		Contact &c = this->contacts[this->contactCount++ % 9];
+		c.setContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
+		std::cout << std::endl << "Contacts Added Successfully\n";
+	}
 }
 
 void	PhoneBook::searchContact(void) const
