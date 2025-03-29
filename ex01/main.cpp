@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <unistd.h>
 
-int	main()
+int	main(void)
 {
 	PhoneBook		pb;
 	std::string		cmd; 
@@ -32,7 +31,7 @@ int	main()
 		else if (cmd == "SEARCH")
 			pb.searchContact();
 		else
-			std::cout << "Wrong command! Try again.. it's not that hard"<< std::endl;
+			std::cout << "Wrong command! Try again.. it's not that hard" << std::endl;
 
 	}
 	return (0);

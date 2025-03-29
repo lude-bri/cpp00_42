@@ -51,7 +51,7 @@ void PhoneBook::startPhonebook() {
 	std::string bright = "\033[1m";
 
 	// ASCII Art (com estilo "retrô")
-	std::cout << green;
+	std::cout << green << bright;
 	std::cout << "     ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄" << std::endl;
 	std::cout << "     █                         ███" << std::endl;
 	std::cout << "     █   AMAZING PHONEBOOK     ███" << std::endl;

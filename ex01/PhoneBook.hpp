@@ -1,8 +1,11 @@
 //ill now create a header and create the two classes that I have to
 
 #ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
+# define GREEN "\033[0;32m"
+
+# include <unistd.h>
 # include <string>
 # include <cstdlib>
 # include <cctype>
