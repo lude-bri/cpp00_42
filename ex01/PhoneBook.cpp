@@ -170,7 +170,7 @@ void	PhoneBook::addContact(void)
 		std::cout << "A contact cannot have empty fields" << std::endl;
 	else
 	{
-		Contact &c = this->contacts[this->contactCount++ % 9];
+		Contact &c = this->contacts[this->contactCount++ % 8];
 		c.setContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 		std::cout << std::endl << "Contacts Added Successfully!!!\n";
 	}
@@ -179,4 +179,39 @@ void	PhoneBook::addContact(void)
 void	PhoneBook::searchContact(void) const
 {
 	std::cout << "LET'S SEARCH FOR A CONTACT!" << std::endl;
+	usleep(1000000);
+	std::string green = "\033[0;32m";
+	std::string reset = "\033[0m";
+	std::string bright = "\033[1m";
+	Contact	c;
+
+	if (this->contactCount == 0)
+	{
+		std::cout << "No contacts yet, mah boi. Go out and make some friends!" << std::endl;
+		return ;
+	}
+
+	std::cout << std::setw(10) << "Index" << "|";
+	std::cout << std::setw(10) << "First Name" << "|";
+	std::cout << std::setw(10) << "Last Name" << "|";
+	std::cout << std::setw(10) << "Nickname" << std::endl;
+
+	for (int i = 0; i < std::min(this->contactCount, 8); i++)
+		this->contacts[i].displayPreview(i);
+
+	std::cout << "Choose an index to view the full contact: ";
+	std::string input;
+	std::getline(std::cin, input);
+
+	if (!c.isValid(input))
+	{
+		std::cout << "Invalid input. Please enter a valid index\n";
+		return ;
+	}
+	
+	int	index = atoi(input.c_str());
+	if (index < 0 || index >= std::min(this->contactCount, 8))
+		std::cout << "Invalid index" << std::endl;
+	else
+		this->contacts[index].displayContact();
 }

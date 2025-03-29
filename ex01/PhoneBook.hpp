@@ -3,8 +3,11 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <string>
-#include <iostream>
+# include <string>
+# include <cstdlib>
+# include <cctype>
+# include <iomanip>
+# include <iostream>
 
 class Contact {
 
@@ -23,8 +26,7 @@ class Contact {
 				  std::string darkestSecret);
 		void	displayContact() const;
 		void	displayPreview(int index) const;
-		bool	isEmpty() const;
-
+		bool	isValid(const std::string& str);
 };
 
 class PhoneBook {

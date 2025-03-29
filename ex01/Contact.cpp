@@ -46,6 +46,21 @@ void	Contact::displayPreview(int index) const
 	std::cout << std::setw(10) << index << "|";
 	std::cout << std::setw(10) << truncate(firstName) << "|";
 	std::cout << std::setw(10) << truncate(lastName) << "|";
-	std::cout << std::setw(10) << truncate(nickName) << "|";
+	std::cout << std::setw(10) << truncate(nickName) << std::endl;
 }
 
+void	Contact::displayContact() const
+{
+	std::cout << "First Name: " << firstName << std::endl;
+	std::cout << "Last Name: " << lastName << std::endl;
+	std::cout << "Nickname: " << nickName << std::endl;
+	std::cout << "Phone Number: " << phoneNumber << std::endl;
+	std::cout << "Darkest Secret: " << darkestSecret << std::endl;
+}
+
+bool	Contact::isValid(const std::string& str)
+{
+	if (str.length() != 1)
+		return false;
+	return std::isdigit(str[0]) && str[0] >= '0' && str[0] <= '7';
+}
