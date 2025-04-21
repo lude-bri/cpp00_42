@@ -20,8 +20,8 @@ int	main(void)
 	pb.startPhonebook();
 	while (!std::cin.eof())
 	{
-		std::cout << "\033[0;32m";
-		usleep(1000000);
+		std::cout << GREEN; 
+		usleep(ONE_SECOND);
 		std::cout << "--> 📞 Text your command: \n";
 		std::getline(std::cin, cmd);
 		if (cmd == "EXIT")

@@ -30,6 +30,7 @@ TEMP_PATH		= .temp
 FILES = main.cpp
 FILES += PhoneBook.cpp
 FILES += Contact.cpp
+FILES += init_phonebook.cpp
 
 ## Paths
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))

@@ -6,13 +6,11 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 11:43:17 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/03/28 12:42:11 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/04/21 12:08:20 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <iostream>
-#include <unistd.h>  // usleep
 
 //Constructor
 PhoneBook::PhoneBook()
@@ -23,125 +21,6 @@ PhoneBook::PhoneBook()
 
 //Destructor
 PhoneBook::~PhoneBook(){}
-
-void printLoadingBar() {
-	const int total = 30;
-	std::cout << "\033[0;32m"; // amazing green
-
-	std::cout << "\nCREATING THIS AMAZING PHONEBOOK...\n\n";
-	std::cout << "[";
-	std::cout.flush();
-
-	for (int i = 0; i < total; ++i) {
-		usleep(100000); // 100ms por "bloco"
-		std::cout << "█";  // bloco de carga
-		std::cout.flush(); // força a impressão imediata
-	}
-	std::cout << "] 100%\n\n";
-	usleep(1000000);
-	std::cout << "DONE!!! \n";
-	usleep(1000000);
-	std::cout << "\033[0m"; // reset de cor
-}
-
-void PhoneBook::startPhonebook() {
-	// Cores retrô
-	std::string green = "\033[0;32m";
-	std::string reset = "\033[0m";
-	std::string bright = "\033[1m";
-
-	// ASCII Art (com estilo "retrô")
-	std::cout << green << bright;
-	std::cout << "     ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄" << std::endl;
-	std::cout << "     █                         ███" << std::endl;
-	std::cout << "     █   AMAZING PHONEBOOK     ███" << std::endl;
-	std::cout << "     █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄███" << std::endl;
-	std::cout << "         \\  ☎️  BEEP  BEEP  /\n";
-	std::cout << "          \\______________/\n";
-	std::cout << reset;
-
-	// Barra de carregamento contínua
-	printLoadingBar();
-	// Mensagem de boas-vindas
-	std::cout << green << bright;
-	std::cout << "=========================================\n";
-	std::cout << "== WELCOME TO YOUR AMAZING PHONEBOOK!! ==\n";
-	std::cout << "=========================================\n";
-	std::cout << "Where everything is unintentionally amazing... or quite that\n\n";
-
-	usleep(100000);
-	std::cout << "       _                 \n";
-	usleep(100000);
-	std::cout << "      | |                \n";
-	usleep(100000);
-	std::cout << "      |_|                \n";
-	usleep(100000);
-	std::cout << "      /_                 \n";
-	usleep(100000);
-	std::cout << "    .-'''------.----.    \n";
-	usleep(100000);
-	std::cout << "    |          U    |    \n";
-	usleep(100000);
-	std::cout << "    |               |    \n";
-	usleep(100000);
-	std::cout << "    | ====o======== |    \n";
-	usleep(100000);
-	std::cout << "    | ============= |    \n";
-	usleep(100000);
-	std::cout << "    |               |    \n";
-	usleep(100000);
-	std::cout << "    |_______________|    \n";
-	usleep(100000);
-	std::cout << "    | _____________ |    \n";
-	usleep(100000);
-	std::cout << "    ||    Welcome   ||   \n";
-	usleep(100000);
-	std::cout << "    ||              ||   \n";
-	usleep(100000);
-	std::cout << "    || _____________||   \n";
-	usleep(100000);
-	std::cout << "     |__.---'''---.__|   \n";
-	usleep(100000);
-	std::cout << "     |---------------|   \n";
-	usleep(100000);
-	std::cout << "     |[Yes][(|)][ No]|   \n";
-	usleep(100000);
-	std::cout << "     | ___  ___  ___ |   \n";
-	usleep(100000);
-	std::cout << "     |[<-'][CLR][.->]|   \n";
-	usleep(100000);
-	std::cout << "     | ___  ___  ___ |   \n";
-	usleep(100000);
-	std::cout << "     |[1__][2__][3__]|   \n";
-	usleep(100000);
-	std::cout << "     | ___  ___  ___ |   \n";
-	usleep(100000);
-	std::cout << "     |[4__][5__][6__]|   \n";
-	usleep(100000);
-	std::cout << "     | ___  ___  ___ |   \n";
-	usleep(100000);
-	std::cout << "     |[7__][8__][9__]|   \n";
-	usleep(100000);
-	std::cout << "     | ___  ___  ___ |   \n";
-	usleep(100000);
-	std::cout << "     |[*__][0__][#__]|   \n";
-	usleep(100000);
-	std::cout << "     `--------------'    \n";
-	usleep(100000);
-	std::cout << "     {__|""|_______'-    \n";
-	usleep(100000);
-	std::cout << "    `---------------'    \n";
-	usleep(1000000);
-	std::cout << "Available commands:\n";
-	usleep(100000);
-	std::cout << "  → ADD     :: Add a new contact\n";
-	usleep(100000);
-	std::cout << "  → SEARCH  :: Search for a contact\n";
-	usleep(100000);
-	std::cout << "  → EXIT    :: Exit the application\n";
-	usleep(100000);
-	std::cout << reset << std::endl;
-}
 
 void	PhoneBook::addContact(void)
 {
