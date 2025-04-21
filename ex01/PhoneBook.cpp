@@ -22,17 +22,15 @@ PhoneBook::PhoneBook()
 //Destructor
 PhoneBook::~PhoneBook(){}
 
+//function that add contacts in the phonebook
 void	PhoneBook::addContact(void)
 {
 	std::cout << "LET'S ADD A CONTACT!" << std::endl;
-	usleep(1000000);
-	std::string green = "\033[0;32m";
-	std::string reset = "\033[0m";
-	std::string bright = "\033[1m";
+	usleep(ONE_SECOND);
 
 	std::string firstName, lastName, nickName, phoneNumber, darkestSecret;
 
-	std::cout << green << bright;
+	std::cout << GREEN << BRIGHT;
 	std::cout << "Please type the contact's first name: \n";
 	std::getline(std::cin , firstName);
 	std::cout << "Please type the contact's last name: \n";
@@ -55,13 +53,11 @@ void	PhoneBook::addContact(void)
 	}
 }
 
+//function that search for contacts in the phonebook
 void	PhoneBook::searchContact(void) const
 {
 	std::cout << "LET'S SEARCH FOR A CONTACT!" << std::endl;
-	usleep(1000000);
-	std::string green = "\033[0;32m";
-	std::string reset = "\033[0m";
-	std::string bright = "\033[1m";
+	usleep(ONE_SECOND);
 	Contact	c;
 
 	if (this->contactCount == 0)
