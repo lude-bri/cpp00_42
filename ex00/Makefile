@@ -39,7 +39,7 @@ OBJS	= $(SRC:$(SRC_PATH)/%.c=%$(BUILD_PATH)/%.o)
 
 CPP				= c++
 CPPFLAGS		= -std=c++98
-CFLAGS			= -Wall -Wextra -Werror -g
+CFLAGS			= -Wall -Wextra -Werror -g -fno-limit-debug-info
 
 #==============================================================================#
 #                                COMMANDS                                      #
@@ -59,7 +59,7 @@ $(NAME): $(BUILD_PATH) $(OBJS)
 	@echo "$(YEL)Compiling $(MAG)$(NAME)$(YEL) mandatory version$(D)"
 	$(CPP) $(CPPFLAGS) $(CFLAGS) $(OBJS) $(INC) -o $(NAME)
 	@echo "[$(_SUCCESS) compiling $(MAG)$(NAME)$(D) $(YEL);D$(D)]"
-	@make --no-print-directory norm
+	@make --no-print-directory
 
 -include $(BUILD_PATH)/%.d
 
